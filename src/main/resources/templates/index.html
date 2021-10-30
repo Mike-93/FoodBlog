@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food-blog</title>
+</head>
+<body>
+<h1>Food-blog</h1>
+<p><a href="/categories">Категории</a></p>
+<h2>Лента</h2>
+<hr />
+<p><a href="/new">Добавить пост</a></p>
+<hr />
+<br/>
+<div th:each="task : ${tasks}">
+    <a th:href="@{/{id}(id=${task.getId()})}" class="task-link" th:attr="task-id=${task.id}" th:text="${task.dealName}">task</a>
+</div>
+</body>
+</html>
